@@ -13,17 +13,22 @@
   <!-- HEADER -->
   <header class="header">
     <div class="header-container">
-      <div class="logo">
+      <a href="/" class="logo">
         <span class="logo-text">GHANA CX</span>
         <span class="logo-subtext">Customer Experience Index</span>
-      </div>
-      <nav class="nav">
+      </a>
+      <nav class="nav" id="nav-menu">
         <a href="/" class="nav-link active">Home</a>
         <a href="#sectors" class="nav-link">Industries</a>
         <a href="#how-it-works" class="nav-link">How It Works</a>
         <a href="/pages/methodology.html" class="nav-link">Methodology</a>
         <a href="/pages/privacy.html" class="nav-link">Privacy</a>
       </nav>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
   </header>
 
@@ -43,7 +48,7 @@
         <p class="hero-subtitle">Your Experience Is Evidence</p>
         <p class="hero-description">Measuring customer experience across the services that shape daily life in Ghana.</p>
         <p class="hero-tagline">Measure. Benchmark. Improve.</p>
-        <a href="#sectors" class="cta-primary">Start Your Experience</a>
+        <button class="cta-primary" onclick="openFormModal()">Start Your Experience</button>
         <a href="#how-it-works" class="cta-secondary">How It Works</a>
       </div>
     </section>
@@ -61,8 +66,10 @@
     <!-- WHAT GHANA CX MEASURES -->
     <section class="section-dimensions" id="what-measures">
       <div class="container">
-        <h2>What Ghana CX Measures</h2>
-        <p class="section-subtitle">Customer experience across 10 core dimensions</p>
+        <div class="section-header">
+          <h2>What Ghana CX Measures</h2>
+          <p class="section-subtitle">Customer experience across 10 core dimensions</p>
+        </div>
         <div class="dimensions-grid">
           <div class="dimension-card">
             <img src="assets/sections/access-convenience.png" alt="Access & Convenience" loading="lazy" decoding="async">
@@ -213,6 +220,16 @@
       </div>
     </section>
   </main>
+
+  <!-- FORM MODAL -->
+  <div id="formModal" class="modal">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeFormModal()">&times;</button>
+      <h2>Share Your Experience</h2>
+      <p>Help us understand customer experience across Ghana</p>
+      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeBiDy-eEmFO8kZ1TrAWGOkfcR8F6BCJeDD5dMT_CBvLP331A/viewform?embedded=true" width="100%" height="600" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+    </div>
+  </div>
 
   <!-- FOOTER -->
   <footer class="footer">
