@@ -39,20 +39,59 @@
     <!-- REVIEW HERO -->
     <section class="review-hero">
       <div class="review-container">
-        <h1 class="review-subtitle">Review Your Experience With</h1>
-        <p style="font-size: 32px; font-weight: 700; color: white; margin: 1rem 0;">Institution Name</p>
-        <p class="review-description">Your experience matters. Complete the BCXI Banking Customer Experience assessment based on your interactions with this institution.</p>
+        <div class="review-copy">
+          <div class="review-identity-lockup">
+            <div class="review-logo-card">
+              <img src="" alt="" id="review-institution-logo" class="review-institution-logo" hidden>
+            </div>
+            <div class="review-title-layer">
+              <p class="review-eyebrow">BCXI Banking Review</p>
+              <h1>Review Your Experience With</h1>
+              <p id="review-institution-name" class="review-subtitle">Institution Name</p>
+            </div>
+          </div>
 
-        <div class="review-actions">
-          <a href="#" id="start-assessment" class="cta-primary">Start Your Experience</a>
-          <a href="/banks/" id="change-bank" class="cta-secondary">Choose Another Bank</a>
+          <div class="review-actions">
+            <a href="#" id="start-assessment" class="cta-primary">Start Your Experience</a>
+            <a href="/banks/" id="change-bank" class="cta-secondary">Choose Another Bank</a>
+          </div>
+        </div>
+        <div class="review-media-panel">
+          <img src="" alt="" id="review-hero-image" class="review-hero-image" hidden>
+          <div class="review-media-caption">Customer experience evaluation</div>
+          <div class="review-image-text-layer">
+            <p class="review-description">Your experience matters. Complete the BCXI Banking Customer Experience assessment based on your interactions with this institution.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-bank-assets">
+      <div class="container">
+        <div class="section-bank-assets-header">
+          <h2>Bank Experience Assets</h2>
+          <p id="review-assets-intro">A branded bank experience page using the approved logo and available welcome image assets.</p>
+        </div>
+        <div id="review-asset-gallery" class="bank-asset-gallery"></div>
+      </div>
+    </section>
+
+    <section class="section-index-dashboard">
+      <div class="container">
+        <div class="index-dashboard-copy">
+          <p class="review-eyebrow">Sector benchmark view</p>
+          <h2>Banking Sector Index Dashboard</h2>
+          <p>The final BCXI Banking dashboard shows what the sector will report: coverage, scoring, dimensions, trend signals and comparative customer experience benchmarks.</p>
+        </div>
+        <div class="index-dashboard-frame">
+          <img src="../assets/dashboards/banking-sector-index-dashboard.svg" alt="BCXI Banking Sector Index Dashboard" class="index-dashboard-image" loading="lazy" decoding="async">
         </div>
       </div>
     </section>
 
     <!-- ABOUT THIS ASSESSMENT -->
     <section class="section-about-assessment">
-      <div class="container" style="max-width: 700px;">
+      <div class="container assessment-container">
         <h2>About This Assessment</h2>
 
         <div class="assessment-card">
@@ -70,7 +109,7 @@
           <p>Your responses contribute to benchmarked customer experience analysis. We collect feedback responsibly and maintain your privacy according to our privacy policy.</p>
         </div>
 
-        <p style="margin-top: 2rem; font-size: 14px; color: #999;">
+        <p class="assessment-privacy-link">
           <a href="../pages/privacy.html">Read our privacy notice</a> before starting the assessment.
         </p>
       </div>
@@ -105,33 +144,6 @@
       <p>&copy; 2026 BCXI Ghana Experience Index. All rights reserved.</p>
     </div>
   </footer>
-
-  <style>
-    .section-about-assessment {
-      padding: clamp(60px, 10vw, 100px) 0;
-      background: white;
-    }
-
-    .assessment-card {
-      background: #f8fafc;
-      border: 1px solid #e0e0e0;
-      border-radius: 12px;
-      padding: 2rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .assessment-card h3 {
-      color: #081a2f;
-      margin-bottom: 1rem;
-    }
-
-    .assessment-card p {
-      color: #666;
-      font-size: 15px;
-      line-height: 1.7;
-    }
-  </style>
-
   <script src="../data/config.js"></script>
   <script src="../data/institutions.js"></script>
   <script src="../scripts/sectors.js"></script>

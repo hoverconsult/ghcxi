@@ -127,7 +127,7 @@ github/
 
 ### LEVEL 3 — Sector Cards
 
-**Purpose:** Homepage "Choose an Industry" section (7 sectors)  
+**Purpose:** Homepage "Choose an Industry" section (8 sectors)  
 **Device Sizes:** Same as dimensions (800/600/400)
 
 **Formats:** WebP only

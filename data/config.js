@@ -9,7 +9,7 @@ const BCXI_CONFIG = {
       slug: 'banks',
       status: 'active',
       description: 'Review the banking institutions you use',
-      icon: '🏦',
+      icon: 'BK',
       defaultFormUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSeBiDy-eEmFO8kZ1TrAWGOkfcR8F6BCJeDD5dMT_CBvLP331A/viewform'
     },
     {
@@ -18,7 +18,15 @@ const BCXI_CONFIG = {
       slug: 'utilities',
       status: 'coming-soon',
       description: 'Power, water and telecommunications',
-      icon: '⚡'
+      icon: 'UT'
+    },
+    {
+      id: 'fuel-stations',
+      name: 'Fuel Stations',
+      slug: 'fuel-stations',
+      status: 'coming-soon',
+      description: 'Petrol, diesel and lubricant retail networks',
+      icon: 'FS'
     },
     {
       id: 'education',
@@ -26,7 +34,7 @@ const BCXI_CONFIG = {
       slug: 'education',
       status: 'coming-soon',
       description: 'Universities, secondary and vocational schools',
-      icon: '📚'
+      icon: 'ED'
     },
     {
       id: 'public-service',
@@ -34,7 +42,7 @@ const BCXI_CONFIG = {
       slug: 'public-service',
       status: 'coming-soon',
       description: 'Public sector agencies and services',
-      icon: '🏛️'
+      icon: 'PS'
     },
     {
       id: 'telecommunications',
@@ -42,7 +50,7 @@ const BCXI_CONFIG = {
       slug: 'telecommunications',
       status: 'coming-soon',
       description: 'Mobile and internet service providers',
-      icon: '📱'
+      icon: 'TC'
     },
     {
       id: 'insurance',
@@ -50,7 +58,7 @@ const BCXI_CONFIG = {
       slug: 'insurance',
       status: 'coming-soon',
       description: 'Insurance companies and providers',
-      icon: '🛡️'
+      icon: 'IN'
     },
     {
       id: 'healthcare',
@@ -58,7 +66,7 @@ const BCXI_CONFIG = {
       slug: 'healthcare',
       status: 'coming-soon',
       description: 'Hospitals, clinics and health services',
-      icon: '⚕️'
+      icon: 'HC'
     }
   ],
 

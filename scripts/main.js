@@ -1,9 +1,31 @@
 // Main application script
 
 document.addEventListener('DOMContentLoaded', function() {
+  normalizeRootLinks();
   renderSectors();
   setupScrollingNavigation();
+  setupMobileNavigation();
+  setupModalDismissal();
 });
+
+function sitePath(path) {
+  if (!path || path.startsWith('#') || /^[a-z][a-z0-9+.-]*:/i.test(path)) {
+    return path;
+  }
+
+  const repoBase = window.location.pathname.startsWith('/ghcxi/') ? '/ghcxi' : '';
+  if (path.startsWith('/')) {
+    return `${repoBase}${path}`;
+  }
+
+  return path;
+}
+
+function normalizeRootLinks() {
+  document.querySelectorAll('a[href^="/"]').forEach(link => {
+    link.setAttribute('href', sitePath(link.getAttribute('href')));
+  });
+}
 
 // Render sectors grid dynamically
 function renderSectors() {
@@ -13,11 +35,11 @@ function renderSectors() {
   grid.innerHTML = BCXI_CONFIG.sectors.map(sector => {
     const isActive = sector.status === 'active';
     const cardClass = `sector-card ${isActive ? 'active' : 'coming-soon'}`;
-    const href = `/${sector.slug}/`;
-    const onClick = !isActive ? 'return false;' : '';
+    const href = sitePath(`/${sector.slug}/`);
+    const ariaDisabled = !isActive ? ' aria-disabled="true"' : '';
 
     return `
-      <a href="${href}" class="${cardClass}" onclick="${onClick}">
+      <a href="${href}" class="${cardClass}"${ariaDisabled}>
         <div class="sector-icon">${sector.icon}</div>
         <h3>${sector.name}</h3>
         <p class="sector-description">${sector.description}</p>
@@ -63,50 +85,59 @@ function setupScrollingNavigation() {
 // Modal functions
 function openFormModal() {
   const modal = document.getElementById('formModal');
+  if (!modal) return;
+
   modal.classList.add('active');
   document.body.style.overflow = 'hidden';
 }
 
 function closeFormModal() {
   const modal = document.getElementById('formModal');
+  if (!modal) return;
+
   modal.classList.remove('active');
-  document.body.style.overflow = 'auto';
+  document.body.style.overflow = '';
 }
 
-// Hamburger menu toggle
-document.addEventListener('DOMContentLoaded', function() {
+function setupMobileNavigation() {
   const hamburger = document.getElementById('hamburger');
   const navMenu = document.getElementById('nav-menu');
 
-  if (hamburger && navMenu) {
-    hamburger.addEventListener('click', function() {
-      navMenu.classList.toggle('active');
-      hamburger.classList.toggle('active');
-    });
+  if (!hamburger || !navMenu) return;
 
-    // Close menu when a link is clicked
-    navMenu.querySelectorAll('.nav-link').forEach(link => {
-      link.addEventListener('click', () => {
-        navMenu.classList.remove('active');
-        hamburger.classList.remove('active');
-      });
-    });
-  }
-});
+  hamburger.addEventListener('click', function() {
+    const isOpen = navMenu.classList.toggle('active');
+    hamburger.classList.toggle('active', isOpen);
+    hamburger.setAttribute('aria-expanded', String(isOpen));
+  });
 
-// Close modal when clicking outside
-document.addEventListener('DOMContentLoaded', function() {
+  navMenu.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+      navMenu.classList.remove('active');
+      hamburger.classList.remove('active');
+      hamburger.setAttribute('aria-expanded', 'false');
+    });
+  });
+}
+
+function setupModalDismissal() {
   const modal = document.getElementById('formModal');
-  if (modal) {
-    modal.addEventListener('click', function(e) {
-      if (e.target === modal) {
-        closeFormModal();
-      }
-    });
-  }
-});
+  if (!modal) return;
+
+  modal.addEventListener('click', function(event) {
+    if (event.target === modal) {
+      closeFormModal();
+    }
+  });
+
+  document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+      closeFormModal();
+    }
+  });
+}
 
 // Service Worker registration
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('./sw.js').catch(() => {});
+  navigator.serviceWorker.register(sitePath('/sw.js')).catch(() => {});
 }

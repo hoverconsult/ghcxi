@@ -13,22 +13,17 @@
   <!-- HEADER -->
   <header class="header">
     <div class="header-container">
-      <a href="/" class="logo">
+      <div class="logo">
         <span class="logo-text">GHANA CX</span>
         <span class="logo-subtext">Customer Experience Index</span>
-      </a>
-      <nav class="nav" id="nav-menu">
+      </div>
+      <nav class="nav">
         <a href="/" class="nav-link active">Home</a>
         <a href="#sectors" class="nav-link">Industries</a>
         <a href="#how-it-works" class="nav-link">How It Works</a>
         <a href="/pages/methodology.html" class="nav-link">Methodology</a>
         <a href="/pages/privacy.html" class="nav-link">Privacy</a>
       </nav>
-      <button class="hamburger" id="hamburger" aria-label="Menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
     </div>
   </header>
 
@@ -36,20 +31,28 @@
     <!-- HERO SECTION -->
     <section class="hero">
       <picture class="hero-image">
-        <!-- Desktop (1920px) -->
-        <source media="(min-width: 1200px)" srcset="assets/welcome/hero-1920.webp" type="image/webp">
-        <!-- Fallback to original -->
+        <source media="(min-width: 1200px)" srcset="assets/web/hero/ghana-cx-hero-master-1920.avif" type="image/avif">
+        <source media="(min-width: 1200px)" srcset="assets/web/hero/ghana-cx-hero-master-1920.webp" type="image/webp">
+        <source media="(min-width: 768px)" srcset="assets/web/hero/ghana-cx-hero-master-1280.avif" type="image/avif">
+        <source media="(min-width: 768px)" srcset="assets/web/hero/ghana-cx-hero-master-1280.webp" type="image/webp">
+        <source srcset="assets/web/hero/ghana-cx-hero-master-480.avif" type="image/avif">
+        <source srcset="assets/web/hero/ghana-cx-hero-master-480.webp" type="image/webp">
         <source srcset="assets/welcome/hero.png" type="image/png">
         <img src="assets/welcome/hero.png" alt="Ghana customer experience intelligence platform" class="hero-img" fetchpriority="high" decoding="sync">
       </picture>
       <div class="hero-overlay"></div>
       <div class="hero-content">
-        <h1 class="hero-title">GHANA CX<br>Customer Experience Index</h1>
+        <h1 class="hero-title">
+          <span class="hero-title-primary">GHANA CX</span>
+          <span class="hero-title-secondary">Customer Experience Index</span>
+        </h1>
         <p class="hero-subtitle">Your Experience Is Evidence</p>
         <p class="hero-description">Measuring customer experience across the services that shape daily life in Ghana.</p>
         <p class="hero-tagline">Measure. Benchmark. Improve.</p>
-        <button class="cta-primary" onclick="openFormModal()">Start Your Experience</button>
-        <a href="#how-it-works" class="cta-secondary">How It Works</a>
+        <div class="hero-actions">
+          <a href="#sectors" class="cta-primary">Start Your Experience</a>
+          <a href="#how-it-works" class="cta-secondary">How It Works</a>
+        </div>
       </div>
     </section>
 
@@ -66,88 +69,56 @@
     <!-- WHAT GHANA CX MEASURES -->
     <section class="section-dimensions" id="what-measures">
       <div class="container">
-        <div class="section-header">
-          <h2>What Ghana CX Measures</h2>
-          <p class="section-subtitle">Customer experience across 10 core dimensions</p>
-        </div>
+        <h2>What Ghana CX Measures</h2>
+        <p class="section-subtitle">Customer experience across 10 core dimensions</p>
         <div class="dimensions-grid">
           <div class="dimension-card">
-            <picture>
-              <source srcset="assets/web/dimensions/ghana-cx-dimension-access-convenience-400.webp 400w, assets/web/dimensions/ghana-cx-dimension-access-convenience-600.webp 600w, assets/web/dimensions/ghana-cx-dimension-access-convenience-800.webp 800w" type="image/webp">
-              <img src="assets/sections/access-convenience.png" alt="Access & Convenience" loading="lazy" decoding="async">
-            </picture>
+            <img src="assets/web/dimensions/ghana-cx-dimension-access-convenience-600.webp" srcset="assets/web/dimensions/ghana-cx-dimension-access-convenience-400.webp 400w, assets/web/dimensions/ghana-cx-dimension-access-convenience-600.webp 600w, assets/web/dimensions/ghana-cx-dimension-access-convenience-800.webp 800w" sizes="(min-width: 1181px) 20vw, (min-width: 769px) 33vw, 100vw" alt="Access & Convenience" loading="eager" decoding="async">
             <h3>Access & Convenience</h3>
             <p>Ease of reaching services and institutions</p>
           </div>
           <div class="dimension-card">
-            <picture>
-              <source srcset="assets/web/dimensions/ghana-cx-dimension-digital-experience-400.webp 400w, assets/web/dimensions/ghana-cx-dimension-digital-experience-600.webp 600w, assets/web/dimensions/ghana-cx-dimension-digital-experience-800.webp 800w" type="image/webp">
-              <img src="assets/sections/digital-experience.png" alt="Digital Experience" loading="lazy" decoding="async">
-            </picture>
+            <img src="assets/web/dimensions/ghana-cx-dimension-digital-experience-600.webp" srcset="assets/web/dimensions/ghana-cx-dimension-digital-experience-400.webp 400w, assets/web/dimensions/ghana-cx-dimension-digital-experience-600.webp 600w, assets/web/dimensions/ghana-cx-dimension-digital-experience-800.webp 800w" sizes="(min-width: 1181px) 20vw, (min-width: 769px) 33vw, 100vw" alt="Digital Experience" loading="eager" decoding="async">
             <h3>Digital Experience</h3>
             <p>Quality of online and mobile channels</p>
           </div>
           <div class="dimension-card">
-            <picture>
-              <source srcset="assets/web/dimensions/ghana-cx-dimension-physical-service-400.webp 400w, assets/web/dimensions/ghana-cx-dimension-physical-service-600.webp 600w, assets/web/dimensions/ghana-cx-dimension-physical-service-800.webp 800w" type="image/webp">
-              <img src="assets/sections/physical-service.png" alt="Physical Service Experience" loading="lazy" decoding="async">
-            </picture>
+            <img src="assets/web/dimensions/ghana-cx-dimension-physical-service-600.webp" srcset="assets/web/dimensions/ghana-cx-dimension-physical-service-400.webp 400w, assets/web/dimensions/ghana-cx-dimension-physical-service-600.webp 600w, assets/web/dimensions/ghana-cx-dimension-physical-service-800.webp 800w" sizes="(min-width: 1181px) 20vw, (min-width: 769px) 33vw, 100vw" alt="Physical Service Experience" loading="eager" decoding="async">
             <h3>Physical Service Experience</h3>
             <p>In-person branch and office experience</p>
           </div>
           <div class="dimension-card">
-            <picture>
-              <source srcset="assets/web/dimensions/ghana-cx-dimension-customer-service-400.webp 400w, assets/web/dimensions/ghana-cx-dimension-customer-service-600.webp 600w, assets/web/dimensions/ghana-cx-dimension-customer-service-800.webp 800w" type="image/webp">
-              <img src="assets/sections/customer-service.png" alt="Customer Service" loading="lazy" decoding="async">
-            </picture>
+            <img src="assets/web/dimensions/ghana-cx-dimension-customer-service-600.webp" srcset="assets/web/dimensions/ghana-cx-dimension-customer-service-400.webp 400w, assets/web/dimensions/ghana-cx-dimension-customer-service-600.webp 600w, assets/web/dimensions/ghana-cx-dimension-customer-service-800.webp 800w" sizes="(min-width: 1181px) 20vw, (min-width: 769px) 33vw, 100vw" alt="Customer Service" loading="eager" decoding="async">
             <h3>Customer Service</h3>
             <p>Quality of staff and support interactions</p>
           </div>
           <div class="dimension-card">
-            <picture>
-              <source srcset="assets/web/dimensions/ghana-cx-dimension-speed-efficiency-400.webp 400w, assets/web/dimensions/ghana-cx-dimension-speed-efficiency-600.webp 600w, assets/web/dimensions/ghana-cx-dimension-speed-efficiency-800.webp 800w" type="image/webp">
-              <img src="assets/sections/speed-efficiency.png" alt="Speed & Efficiency" loading="lazy" decoding="async">
-            </picture>
+            <img src="assets/web/dimensions/ghana-cx-dimension-speed-efficiency-600.webp" srcset="assets/web/dimensions/ghana-cx-dimension-speed-efficiency-400.webp 400w, assets/web/dimensions/ghana-cx-dimension-speed-efficiency-600.webp 600w, assets/web/dimensions/ghana-cx-dimension-speed-efficiency-800.webp 800w" sizes="(min-width: 1181px) 20vw, (min-width: 769px) 33vw, 100vw" alt="Speed & Efficiency" loading="eager" decoding="async">
             <h3>Speed & Efficiency</h3>
             <p>Response times and service delivery</p>
           </div>
           <div class="dimension-card">
-            <picture>
-              <source srcset="assets/web/dimensions/ghana-cx-dimension-product-value-400.webp 400w, assets/web/dimensions/ghana-cx-dimension-product-value-600.webp 600w, assets/web/dimensions/ghana-cx-dimension-product-value-800.webp 800w" type="image/webp">
-              <img src="assets/sections/product-value.png" alt="Product / Service Value" loading="lazy" decoding="async">
-            </picture>
+            <img src="assets/web/dimensions/ghana-cx-dimension-product-value-600.webp" srcset="assets/web/dimensions/ghana-cx-dimension-product-value-400.webp 400w, assets/web/dimensions/ghana-cx-dimension-product-value-600.webp 600w, assets/web/dimensions/ghana-cx-dimension-product-value-800.webp 800w" sizes="(min-width: 1181px) 20vw, (min-width: 769px) 33vw, 100vw" alt="Product / Service Value" loading="eager" decoding="async">
             <h3>Product / Service Value</h3>
             <p>Relevance and quality of offerings</p>
           </div>
           <div class="dimension-card">
-            <picture>
-              <source srcset="assets/web/dimensions/ghana-cx-dimension-trust-security-400.webp 400w, assets/web/dimensions/ghana-cx-dimension-trust-security-600.webp 600w, assets/web/dimensions/ghana-cx-dimension-trust-security-800.webp 800w" type="image/webp">
-              <img src="assets/sections/trust-security.png" alt="Trust & Security" loading="lazy" decoding="async">
-            </picture>
+            <img src="assets/web/dimensions/ghana-cx-dimension-trust-security-600.webp" srcset="assets/web/dimensions/ghana-cx-dimension-trust-security-400.webp 400w, assets/web/dimensions/ghana-cx-dimension-trust-security-600.webp 600w, assets/web/dimensions/ghana-cx-dimension-trust-security-800.webp 800w" sizes="(min-width: 1181px) 20vw, (min-width: 769px) 33vw, 100vw" alt="Trust & Security" loading="eager" decoding="async">
             <h3>Trust & Security</h3>
             <p>Data safety and institutional reliability</p>
           </div>
           <div class="dimension-card">
-            <picture>
-              <source srcset="assets/web/dimensions/ghana-cx-dimension-transparency-400.webp 400w, assets/web/dimensions/ghana-cx-dimension-transparency-600.webp 600w, assets/web/dimensions/ghana-cx-dimension-transparency-800.webp 800w" type="image/webp">
-              <img src="assets/sections/transparency.png" alt="Transparency" loading="lazy" decoding="async">
-            </picture>
+            <img src="assets/web/dimensions/ghana-cx-dimension-transparency-600.webp" srcset="assets/web/dimensions/ghana-cx-dimension-transparency-400.webp 400w, assets/web/dimensions/ghana-cx-dimension-transparency-600.webp 600w, assets/web/dimensions/ghana-cx-dimension-transparency-800.webp 800w" sizes="(min-width: 1181px) 20vw, (min-width: 769px) 33vw, 100vw" alt="Transparency" loading="eager" decoding="async">
             <h3>Transparency</h3>
             <p>Clear communication and disclosure</p>
           </div>
           <div class="dimension-card">
-            <picture>
-              <source srcset="assets/web/dimensions/ghana-cx-dimension-problem-resolution-400.webp 400w, assets/web/dimensions/ghana-cx-dimension-problem-resolution-600.webp 600w, assets/web/dimensions/ghana-cx-dimension-problem-resolution-800.webp 800w" type="image/webp">
-              <img src="assets/sections/problem-resolution.png" alt="Problem Resolution" loading="lazy" decoding="async">
-            </picture>
+            <img src="assets/web/dimensions/ghana-cx-dimension-problem-resolution-600.webp" srcset="assets/web/dimensions/ghana-cx-dimension-problem-resolution-400.webp 400w, assets/web/dimensions/ghana-cx-dimension-problem-resolution-600.webp 600w, assets/web/dimensions/ghana-cx-dimension-problem-resolution-800.webp 800w" sizes="(min-width: 1181px) 20vw, (min-width: 769px) 33vw, 100vw" alt="Problem Resolution" loading="eager" decoding="async">
             <h3>Problem Resolution</h3>
             <p>How issues are handled and resolved</p>
           </div>
           <div class="dimension-card">
-            <picture>
-              <source srcset="assets/web/dimensions/ghana-cx-dimension-overall-experience-400.webp 400w, assets/web/dimensions/ghana-cx-dimension-overall-experience-600.webp 600w, assets/web/dimensions/ghana-cx-dimension-overall-experience-800.webp 800w" type="image/webp">
-              <img src="assets/sections/overall-experience.png" alt="Overall Experience" loading="lazy" decoding="async">
-            </picture>
+            <img src="assets/web/dimensions/ghana-cx-dimension-overall-experience-600.webp" srcset="assets/web/dimensions/ghana-cx-dimension-overall-experience-400.webp 400w, assets/web/dimensions/ghana-cx-dimension-overall-experience-600.webp 600w, assets/web/dimensions/ghana-cx-dimension-overall-experience-800.webp 800w" sizes="(min-width: 1181px) 20vw, (min-width: 769px) 33vw, 100vw" alt="Overall Experience" loading="eager" decoding="async">
             <h3>Overall Experience</h3>
             <p>Aggregate satisfaction and likelihood to recommend</p>
           </div>
@@ -250,16 +221,6 @@
       </div>
     </section>
   </main>
-
-  <!-- FORM MODAL -->
-  <div id="formModal" class="modal">
-    <div class="modal-content">
-      <button class="modal-close" onclick="closeFormModal()">&times;</button>
-      <h2>Share Your Experience</h2>
-      <p>Help us understand customer experience across Ghana</p>
-      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeBiDy-eEmFO8kZ1TrAWGOkfcR8F6BCJeDD5dMT_CBvLP331A/viewform?embedded=true" width="100%" height="600" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
-    </div>
-  </div>
 
   <!-- FOOTER -->
   <footer class="footer">

@@ -51,25 +51,40 @@
 /* Sector Dimensions */
 .section-sector-dimensions {
   background: white;
-  padding: clamp(60px, 10vw, 100px) 0;
+  padding: clamp(32px, 5vw, 54px) 0;
+  text-align: center;
+}
+
+.section-sector-dimensions h2 {
+  margin-bottom: 0.45rem;
+}
+
+.section-sector-dimensions .section-subtitle {
+  margin-bottom: 0;
 }
 
 .dimensions-summary {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 1rem;
-  margin-top: 2rem;
+  grid-template-columns: repeat(5, minmax(150px, 1fr));
+  gap: 0.75rem;
+  margin: 1.2rem auto 0;
+  max-width: 930px;
 }
 
 .dimension-tag {
   background: #f0f7fb;
   border: 1px solid #1e78b5;
   border-radius: 8px;
-  padding: 1rem;
+  min-height: 52px;
+  padding: 0.7rem 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  font-weight: 500;
+  font-weight: 700;
   color: #1a3a52;
-  font-size: 14px;
+  font-size: 15px;
+  line-height: 1.25;
 }
 
 /* Institution Directory Section */
@@ -125,7 +140,7 @@
   justify-content: center;
   padding: 1.5rem;
   border: 2px solid #e0e0e0;
-  border-radius: 12px;
+  border-radius: 8px;
   text-decoration: none;
   cursor: pointer;
   transition: all 0.3s;
@@ -134,11 +149,12 @@
   aspect-ratio: 1;
   position: relative;
   overflow: hidden;
+  box-shadow: inset 0 0 0 0 rgba(0, 0, 0, 0);
 }
 
 .institution-card:hover {
-  border-color: #1e78b5;
-  box-shadow: 0 8px 24px rgba(30, 120, 181, 0.15);
+  border-color: var(--bank-primary, #1e78b5);
+  box-shadow: 0 8px 24px rgba(30, 120, 181, 0.15), inset 0 4px 0 var(--bank-accent, #2eb1cf);
   transform: translateY(-4px);
 }
 
@@ -152,6 +168,22 @@
   object-fit: contain;
   margin-bottom: 0.75rem;
   transition: transform 0.3s;
+}
+
+.institution-card.logo-missing {
+  background: #f8fafc;
+  border-style: dashed;
+}
+
+.institution-card.logo-missing::before {
+  content: "Logo unavailable";
+  display: block;
+  margin-bottom: 0.75rem;
+  color: #8a97a5;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
 
 .institution-card:hover .institution-logo {
@@ -172,8 +204,8 @@
   bottom: 0;
   left: 0;
   right: 0;
-  background: linear-gradient(to top, rgba(30, 120, 181, 0.1), transparent);
-  color: #1e78b5;
+  background: linear-gradient(to top, color-mix(in srgb, var(--bank-primary, #1e78b5) 12%, transparent), transparent);
+  color: var(--bank-primary, #1e78b5);
   padding: 0.5rem 0;
   font-size: 11px;
   font-weight: 700;
@@ -210,65 +242,513 @@
 
 /* Review Page Styles */
 .review-container {
-  max-width: 800px;
+  max-width: 1320px;
   margin: 0 auto;
-  padding: clamp(40px, 8vw, 80px) clamp(20px, 4vw, 60px);
-  text-align: center;
+  padding: clamp(44px, 7vw, 82px) clamp(20px, 4vw, 60px);
+  display: grid;
+  grid-template-columns: minmax(540px, 0.94fr) minmax(560px, 1.06fr);
+  gap: clamp(1.75rem, 3vw, 3rem);
+  align-items: center;
 }
 
 .review-hero {
-  background: linear-gradient(135deg, #081a2f 0%, #1a3a52 100%);
+  background:
+    radial-gradient(circle at 16% 20%, color-mix(in srgb, var(--bank-accent, #2eb1cf) 26%, transparent), transparent 28%),
+    linear-gradient(135deg, var(--bank-dark, #081a2f) 0%, color-mix(in srgb, var(--bank-primary, #1e78b5) 70%, #081a2f) 100%);
   color: white;
   padding: clamp(60px, 10vw, 100px) 0;
+  overflow: hidden;
 }
 
 .review-hero h1 {
-  font-size: clamp(36px, 8vw, 56px);
-  margin-bottom: 1.5rem;
+  font-size: clamp(34px, 4.6vw, 62px);
+  margin-bottom: 0.75rem;
   color: white;
+}
+
+.review-copy {
+  text-align: left;
+  min-width: 0;
+}
+
+.review-eyebrow {
+  color: color-mix(in srgb, var(--bank-accent, #76d6ed) 82%, white);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  margin: 0 0 1rem;
+  text-transform: uppercase;
+}
+
+.review-identity-lockup {
+  display: grid;
+  grid-template-columns: minmax(130px, 160px) minmax(360px, 1fr);
+  gap: clamp(1rem, 2vw, 1.5rem);
+  align-items: center;
+}
+
+.review-title-layer {
+  position: relative;
+  min-height: clamp(330px, 28vw, 430px);
+  width: min(430px, 100%);
+  border-radius: 999px;
+  padding: clamp(2rem, 4vw, 3.5rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background:
+    radial-gradient(circle at 35% 35%, rgba(255, 255, 255, 0.09), transparent 60%),
+    rgba(255, 255, 255, 0.035);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.10);
+}
+
+.review-title-layer h1 {
+  font-size: clamp(36px, 3.4vw, 50px);
+  line-height: 1.12;
+}
+
+.review-logo-card {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 142px;
+  padding: 0.9rem 1rem;
+  background: rgba(255, 255, 255, 0.96);
+  border-radius: 8px;
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.22);
 }
 
 .review-institution-logo {
   width: 100%;
-  max-width: 300px;
-  height: auto;
-  margin: 0 auto 2rem;
+  max-width: 210px;
+  max-height: 116px;
+  object-fit: contain;
+  margin: 0 auto;
   display: block;
 }
 
 .review-subtitle {
-  font-size: clamp(18px, 3vw, 24px);
-  color: #e0e8f0;
-  margin-bottom: 1rem;
+  font-size: clamp(22px, 2.1vw, 30px);
+  color: color-mix(in srgb, var(--bank-accent, #76d6ed) 72%, white);
+  font-weight: 700;
+  margin-bottom: 0;
 }
 
 .review-description {
-  font-size: 16px;
+  font-size: clamp(17px, 1.65vw, 21px);
   color: #e0e8f0;
-  margin-bottom: 2rem;
-  line-height: 1.6;
+  margin: 0;
+  line-height: 1.65;
 }
 
 .review-actions {
-  display: flex;
+  display: grid;
+  grid-template-columns: minmax(280px, 1fr) minmax(230px, 0.82fr);
   gap: 1rem;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-top: 2rem;
+  justify-content: end;
+  margin-top: 1.75rem;
+  padding-left: 0;
+}
+
+.review-media-panel {
+  position: relative;
+  display: grid;
+  gap: 1rem;
+  align-self: stretch;
+}
+
+.review-hero-image {
+  width: 100%;
+  aspect-ratio: 16 / 8.1;
+  height: auto;
+  object-fit: cover;
+  object-position: center;
+  image-rendering: auto;
+  display: block;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.35);
+}
+
+.review-media-panel::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  aspect-ratio: 16 / 8.1;
+  background: linear-gradient(180deg, transparent 45%, rgba(0, 0, 0, 0.58) 100%);
+  border-radius: 8px;
+  pointer-events: none;
+}
+
+.review-media-caption {
+  position: absolute;
+  left: 1.25rem;
+  right: 1.25rem;
+  top: calc(100% * 8.1 / 16 - 3rem);
+  z-index: 1;
+  color: white;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.review-image-text-layer {
+  width: min(96%, 900px);
+  margin: 0 auto;
+  padding: clamp(1.2rem, 2.4vw, 1.6rem);
+  border-left: 5px solid var(--bank-accent, #76d6ed);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.10);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.12);
 }
 
 .review-actions .cta-primary {
-  font-size: 16px;
-  padding: 16px 40px;
+  min-width: 286px;
+  min-height: 68px;
+  padding: 23px 48px;
+  font-size: 19px;
+  text-align: center;
 }
 
 .review-actions .cta-secondary {
+  min-width: 244px;
+  min-height: 68px;
+  padding: 23px 34px;
+  font-size: 17px;
+  text-align: center;
+}
+
+.section-bank-assets {
+  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+  border-bottom: 1px solid #e6edf4;
+  padding: clamp(50px, 8vw, 80px) 0;
+}
+
+.section-index-dashboard {
+  background: #ffffff;
+  border-top: 1px solid #e6edf4;
+  padding: clamp(42px, 7vw, 72px) 0;
+}
+
+.section-index-dashboard .container {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.42fr) minmax(320px, 1fr);
+  gap: clamp(1.5rem, 4vw, 3rem);
+  align-items: center;
+}
+
+.index-dashboard-copy h2 {
+  color: #081a2f;
+  margin-bottom: 1rem;
+}
+
+.index-dashboard-copy p:not(.review-eyebrow) {
+  color: #5c6875;
+  font-size: clamp(16px, 1.6vw, 19px);
+}
+
+.index-dashboard-frame {
+  width: 100%;
+}
+
+.index-dashboard-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  box-shadow: 0 20px 50px rgba(8, 26, 47, 0.16);
+}
+
+.sector-metrics-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1.25rem;
+}
+
+.section-about-assessment {
+  padding: clamp(52px, 8vw, 82px) 0;
+  background: white;
+}
+
+.assessment-container {
+  max-width: 940px;
+}
+
+.section-about-assessment h2 {
+  text-align: center;
+  margin-bottom: 1.6rem;
+}
+
+.assessment-card {
+  width: 100%;
+  background: #f8fafc;
+  border: 1px solid #d8e0e8;
+  border-radius: 8px;
+  padding: clamp(1.75rem, 3.2vw, 2.35rem) clamp(1.5rem, 4vw, 2.75rem);
+  margin-bottom: 1rem;
+  box-shadow: 0 10px 28px rgba(8, 26, 47, 0.06);
+}
+
+.assessment-card h3 {
+  color: #081a2f;
+  margin-bottom: 0.75rem;
+}
+
+.assessment-card p {
+  color: #4d5a66;
+  font-size: clamp(17px, 1.6vw, 20px);
+  line-height: 1.7;
+  margin-bottom: 0;
+}
+
+.assessment-privacy-link {
+  margin-top: 1.5rem;
+  font-size: 15px;
+  color: #6b7280;
+}
+
+.sector-metrics-page {
+  background: #f8fafc;
+  padding: clamp(48px, 8vw, 86px) 0;
+}
+
+.metrics-dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.metrics-dashboard-card {
+  background: white;
+  border: 1px solid #dbe5ee;
+  border-radius: 8px;
+  padding: clamp(1.25rem, 2.5vw, 1.75rem);
+  box-shadow: 0 12px 30px rgba(8, 26, 47, 0.08);
+}
+
+.metrics-dashboard-card h2 {
+  color: #081a2f;
+  font-size: clamp(22px, 2.4vw, 28px);
+  margin-bottom: 1rem;
+}
+
+.metrics-dashboard-card ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.metrics-dashboard-card li {
+  color: #344453;
+  font-size: clamp(16px, 1.7vw, 19px);
+  line-height: 1.45;
+  padding: 0.7rem 0;
+  border-top: 1px solid #eef2f6;
+}
+
+.metrics-dashboard-card li:first-child {
+  border-top: 0;
+}
+
+.metrics-dashboard-note {
+  margin: 1.25rem auto 0;
+  padding: clamp(1.4rem, 3vw, 2rem);
+  background: #081a2f;
+  color: white;
+  border-radius: 8px;
+}
+
+.metrics-dashboard-note h2 {
+  color: white;
+  margin-bottom: 0.65rem;
+}
+
+.metrics-dashboard-note p {
+  color: #dce8f2;
+  font-size: clamp(17px, 1.8vw, 20px);
+  max-width: 860px;
+}
+
+.sector-directory {
+  background: #f8fafc;
+  border-top: 1px solid #e1e8ef;
+  padding: clamp(44px, 7vw, 76px) 0;
+}
+
+.sector-directory-header {
+  max-width: 820px;
+  margin-bottom: 1.75rem;
+}
+
+.sector-directory-header h2 {
+  color: #081a2f;
+  margin-bottom: 0.65rem;
+}
+
+.sector-directory-header p {
+  color: #526170;
+  font-size: clamp(16px, 1.6vw, 19px);
+}
+
+.sector-directory-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 1rem;
+}
+
+.sector-directory-card {
+  min-height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.65rem;
+  padding: 1.25rem;
+  background: white;
+  border: 1px solid #dce6ef;
+  border-radius: 8px;
+  box-shadow: 0 10px 24px rgba(8, 26, 47, 0.06);
+}
+
+.sector-directory-card h3 {
+  color: #081a2f;
+  font-size: 18px;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.sector-directory-card p {
+  color: #5c6875;
+  font-size: 14px;
+  line-height: 1.45;
+  margin: 0;
+}
+
+.logo-tile {
+  min-height: 86px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.9rem;
+  border-radius: 8px;
+  background: var(--brand-bg, #f0f7fb);
+  color: var(--brand-fg, #081a2f);
+  border: 1px solid rgba(8, 26, 47, 0.08);
+  font-size: 21px;
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: 0;
+  text-align: center;
+}
+
+.logo-tile small {
+  display: block;
+  margin-top: 0.35rem;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  opacity: 0.82;
+  text-transform: uppercase;
+}
+
+.coming-soon-card .cta-secondary {
+  display: none;
+}
+
+.section-bank-assets-header {
+  max-width: 760px;
+  margin-bottom: 2rem;
+}
+
+.section-bank-assets-header h2 {
+  color: var(--bank-dark, #081a2f);
+  margin-bottom: 0.75rem;
+}
+
+.section-bank-assets-header p {
+  color: #5c6875;
   font-size: 16px;
-  padding: 16px 40px;
+}
+
+.bank-asset-gallery {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.7fr) minmax(280px, 1.3fr);
+  gap: 1.5rem;
+  align-items: stretch;
+}
+
+.bank-asset-card {
+  border: 1px solid #dfe6ee;
+  border-radius: 8px;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 12px 28px rgba(8, 26, 47, 0.08);
+}
+
+.bank-asset-card img {
+  width: 100%;
+  height: 260px;
+  display: block;
+  object-fit: contain;
+  background: #ffffff;
+  padding: 1rem;
+}
+
+.bank-asset-card:nth-child(2) img {
+  aspect-ratio: 16 / 9;
+  height: auto;
+  object-fit: cover;
+  padding: 0;
+}
+
+.bank-asset-card figcaption {
+  padding: 0.9rem 1rem;
+  color: var(--bank-dark, #081a2f);
+  border-top: 1px solid #eef2f6;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
 
 /* Responsive */
+@media (max-width: 1120px) {
+  .review-container {
+    grid-template-columns: 1fr;
+    max-width: 920px;
+  }
+
+  .review-actions {
+    justify-content: start;
+  }
+}
+
+@media (max-width: 900px) {
+  .metrics-dashboard-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
 @media (max-width: 768px) {
+  .section-sector-dimensions {
+    padding: 28px 0 34px;
+  }
+
+  .dimensions-summary {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.65rem;
+  }
+
+  .dimension-tag {
+    min-height: 58px;
+    font-size: 15.5px;
+    padding: 0.85rem;
+  }
+
   .institution-grid {
     grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
     gap: 1rem;
@@ -287,12 +767,101 @@
     font-size: 12px;
   }
 
+  .review-container {
+    grid-template-columns: 1fr;
+    padding-top: 34px;
+    padding-bottom: 42px;
+  }
+
+  .review-identity-lockup {
+    grid-template-columns: 1fr;
+  }
+
+  .review-title-layer {
+    width: 100%;
+    min-height: unset;
+    border-radius: 8px;
+    padding: 1.4rem;
+  }
+
   .review-actions {
-    flex-direction: column;
+    padding-left: 0;
+    display: grid;
+    grid-template-columns: 1fr;
   }
 
   .review-actions a {
     width: 100%;
+    text-align: center;
+  }
+
+  .review-logo-card {
+    width: min(280px, 100%);
+    min-height: 118px;
+  }
+
+  .review-hero h1 {
+    font-size: clamp(34px, 9vw, 48px);
+  }
+
+  .review-subtitle {
+    font-size: 24px;
+  }
+
+  .review-hero-image {
+    aspect-ratio: 16 / 9;
+  }
+
+  .review-media-panel::after {
+    aspect-ratio: 16 / 9;
+  }
+
+  .review-media-caption {
+    top: calc(100% * 9 / 16 - 3rem);
+  }
+
+  .review-image-text-layer {
+    width: 100%;
+  }
+
+  .bank-asset-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .section-index-dashboard .container {
+    grid-template-columns: 1fr;
+  }
+
+  .review-description,
+  .index-dashboard-copy p:not(.review-eyebrow),
+  .section-bank-assets-header p {
+    font-size: 18px;
+  }
+
+  .assessment-container {
+    max-width: 100%;
+  }
+
+  .assessment-card {
+    padding: 1.35rem;
+  }
+
+  .assessment-card h3 {
+    font-size: 22px;
+  }
+
+  .assessment-card p,
+  .metrics-dashboard-card li,
+  .metrics-dashboard-note p {
+    font-size: 18px;
+  }
+
+  .metrics-dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section-about-assessment {
+    padding: 42px 0 52px;
   }
 }
 
@@ -310,6 +879,6 @@
   }
 
   .dimension-tag {
-    font-size: 13px;
+    font-size: 16px;
   }
 }

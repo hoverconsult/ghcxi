@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 820" role="img" aria-labelledby="title desc">
+  <title id="title">BCXI Banking Sector Index Dashboard</title>
+  <desc id="desc">Dashboard preview showing the Banking Customer Experience Index framework, sector coverage, scoring model, dimensions, and expected benchmark outputs.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#071b32"/>
+      <stop offset="0.55" stop-color="#0b3f61"/>
+      <stop offset="1" stop-color="#0f7ea3"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="0" x2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.98"/>
+      <stop offset="1" stop-color="#eef8fb" stop-opacity="0.98"/>
+    </linearGradient>
+    <filter id="shadow" x="-15%" y="-15%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#03101f" flood-opacity="0.22"/>
+    </filter>
+  </defs>
+
+  <rect width="1440" height="820" fill="url(#bg)"/>
+  <path d="M0 640 C260 540 420 760 720 650 C1010 545 1110 610 1440 505 L1440 820 L0 820 Z" fill="#2eb1cf" opacity="0.18"/>
+  <path d="M70 95 H1370 V725 H70 Z" rx="34" fill="#ffffff" opacity="0.08"/>
+
+  <text x="116" y="150" fill="#ffffff" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="800">BCXI Banking Sector Index Dashboard</text>
+  <text x="116" y="190" fill="#bfefff" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="600">Final sector view for customer experience measurement, benchmarking, and institutional improvement</text>
+
+  <g filter="url(#shadow)">
+    <rect x="116" y="238" width="268" height="142" rx="20" fill="url(#panel)"/>
+    <text x="144" y="286" fill="#0a2d4d" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="800">Sector Coverage</text>
+    <text x="144" y="340" fill="#0f7ea3" font-family="Inter, Arial, sans-serif" font-size="54" font-weight="900">23</text>
+    <text x="224" y="340" fill="#44586b" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="700">Banks</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="414" y="238" width="268" height="142" rx="20" fill="url(#panel)"/>
+    <text x="442" y="286" fill="#0a2d4d" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="800">CX Dimensions</text>
+    <text x="442" y="340" fill="#0f7ea3" font-family="Inter, Arial, sans-serif" font-size="54" font-weight="900">10</text>
+    <text x="522" y="340" fill="#44586b" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="700">Core indices</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="712" y="238" width="268" height="142" rx="20" fill="url(#panel)"/>
+    <text x="740" y="286" fill="#0a2d4d" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="800">Scoring Scale</text>
+    <text x="740" y="340" fill="#0f7ea3" font-family="Inter, Arial, sans-serif" font-size="54" font-weight="900">0-100</text>
+    <text x="878" y="340" fill="#44586b" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="700">BCXI</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="1010" y="238" width="314" height="142" rx="20" fill="url(#panel)"/>
+    <text x="1038" y="286" fill="#0a2d4d" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="800">Benchmark Outputs</text>
+    <text x="1038" y="340" fill="#0f7ea3" font-family="Inter, Arial, sans-serif" font-size="54" font-weight="900">Live</text>
+    <text x="1152" y="340" fill="#44586b" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="700">ready model</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="116" y="430" width="620" height="250" rx="24" fill="#ffffff"/>
+    <text x="150" y="482" fill="#0a2d4d" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="900">What the Banking Index Measures</text>
+    <g fill="#ecf7fb" stroke="#1e78b5" stroke-width="2">
+      <rect x="150" y="520" width="168" height="44" rx="10"/>
+      <rect x="332" y="520" width="168" height="44" rx="10"/>
+      <rect x="514" y="520" width="168" height="44" rx="10"/>
+      <rect x="150" y="580" width="168" height="44" rx="10"/>
+      <rect x="332" y="580" width="168" height="44" rx="10"/>
+      <rect x="514" y="580" width="168" height="44" rx="10"/>
+    </g>
+    <g fill="#0a2d4d" font-family="Inter, Arial, sans-serif" font-size="15" font-weight="800" text-anchor="middle">
+      <text x="234" y="548">Access</text>
+      <text x="416" y="548">Digital</text>
+      <text x="598" y="548">Service</text>
+      <text x="234" y="608">Speed</text>
+      <text x="416" y="608">Trust</text>
+      <text x="598" y="608">Resolution</text>
+    </g>
+    <text x="150" y="656" fill="#5a6a79" font-family="Inter, Arial, sans-serif" font-size="17">Scores combine customer evidence, channel experience, service recovery, and overall satisfaction.</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="780" y="430" width="544" height="250" rx="24" fill="#ffffff"/>
+    <text x="814" y="482" fill="#0a2d4d" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="900">Expected Sector Dashboard</text>
+    <rect x="814" y="528" width="420" height="22" rx="11" fill="#e8f0f5"/>
+    <rect x="814" y="528" width="352" height="22" rx="11" fill="#2eb1cf"/>
+    <text x="1254" y="548" fill="#0a2d4d" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="900">BCXI</text>
+    <rect x="814" y="582" width="420" height="22" rx="11" fill="#e8f0f5"/>
+    <rect x="814" y="582" width="296" height="22" rx="11" fill="#1e78b5"/>
+    <text x="1254" y="602" fill="#0a2d4d" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="900">NPS</text>
+    <rect x="814" y="636" width="420" height="22" rx="11" fill="#e8f0f5"/>
+    <rect x="814" y="636" width="330" height="22" rx="11" fill="#76d6ed"/>
+    <text x="1254" y="656" fill="#0a2d4d" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="900">Trend</text>
+  </g>
+</svg>
