@@ -89,7 +89,7 @@ const BCXI_CONFIG = {
       description: 'Insurance companies and providers',
       icon: 'IN',
       theme: { primary: '#153b7a', accent: '#6d4aff', highlight: '#d6a329' },
-      heroImage: null,
+      heroImage: '/assets/web/sectors/ghana-cx-sector-insurance-800.webp',
       ctaLabel: 'Explore Insurance',
       respondentInstructions: 'The Insurance assessment will open after its exact respondent form URL has been verified.',
       defaultFormUrl: null

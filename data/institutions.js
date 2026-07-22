@@ -111,7 +111,7 @@ const INSTITUTIONS = {
   insurance: [
     { id: 'INS_01', name: 'National Insurance Commission', slug: 'nic', logoPath: '/assets/providers/insurance/nic/logo.png', formUrl: null },
     { id: 'INS_02', name: 'Enterprise Insurance', slug: 'enterprise-insurance', logoPath: '/assets/providers/insurance/enterprise-insurance/logo.png', formUrl: null },
-    { id: 'INS_03', name: 'Hollard Ghana', slug: 'hollard-ghana', logoPath: '/assets/providers/insurance/hollard-ghana/logo.png', formUrl: null },
+    { id: 'INS_03', name: 'Hollard Ghana', slug: 'hollard-ghana', logoPath: '/assets/providers/insurance/hollard-ghana/logo.png', logoBackground: '#111111', formUrl: null },
     { id: 'INS_04', name: 'SIC Insurance', slug: 'sic-insurance', logoPath: '/assets/providers/insurance/sic-insurance/logo.png', formUrl: null },
     { id: 'INS_05', name: 'Star Assurance', slug: 'star-assurance', logoPath: null, formUrl: null, assetStatus: 'source-blocked' },
     { id: 'INS_06', name: 'Glico General', slug: 'glico-general', logoPath: null, formUrl: null, assetStatus: 'source-blocked' },

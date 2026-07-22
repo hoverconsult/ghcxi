@@ -183,12 +183,14 @@ function renderSectorProviders(sector) {
 
     return `
       <article class="sector-directory-card provider-card">
-        <div class="provider-logo-frame">
+        <div class="provider-logo-frame"${provider.logoBackground ? ` style="--provider-logo-bg: ${provider.logoBackground}"` : ''}>
           ${logo}
           <span class="provider-logo-fallback"${fallbackHidden} aria-hidden="true">${providerInitials(provider.name)}</span>
         </div>
         <h3>${provider.name}</h3>
-        ${provider.assetStatus === 'source-blocked' ? '<p class="provider-asset-note">Approved logo source pending</p>' : ''}
+        ${provider.assetStatus === 'source-blocked'
+          ? '<p class="provider-asset-note">Approved logo source pending</p>'
+          : '<p class="provider-asset-note provider-asset-note-spacer" aria-hidden="true">Logo verified</p>'}
         ${cta}
       </article>
     `;
