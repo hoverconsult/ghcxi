@@ -10,6 +10,26 @@ html {
   overflow-x: hidden;
 }
 
+.skip-link {
+  position: fixed;
+  top: 0.75rem;
+  left: 0.75rem;
+  z-index: 10000;
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  color: #ffffff;
+  background: #081a2f;
+  font-weight: 700;
+  transform: translateY(-160%);
+  transition: transform 140ms ease;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+  outline: 3px solid #f2c94c;
+  outline-offset: 3px;
+}
+
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
   line-height: 1.6;
@@ -465,6 +485,177 @@ section {
   box-shadow: 0 10px 28px rgba(8, 26, 47, 0.06);
 }
 
+.sector-card-image {
+  width: 100%;
+  height: 142px;
+  object-fit: cover;
+  display: block;
+  border-bottom: 3px solid var(--sector-accent, var(--primary-blue));
+}
+
+.sector-card-body {
+  padding: 1.5rem;
+}
+
+.sector-card.has-card-body {
+  padding: 0;
+  overflow: hidden;
+  border-top-color: var(--sector-primary, var(--primary-blue));
+}
+
+.sector-card.has-card-body:hover,
+.sector-card.has-card-body:focus-visible {
+  border-color: var(--sector-accent, var(--primary-blue));
+}
+
+.sector-explore {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 1rem;
+  color: #0b3657;
+  font-weight: 700;
+  font-size: 0.92rem;
+}
+
+.sector-extended-page .sector-hero {
+  background: linear-gradient(125deg, var(--sector-primary, #0b1f3a), color-mix(in srgb, var(--sector-primary, #0b1f3a) 72%, #000));
+}
+
+.sector-extended-page .sector-hero-with-image {
+  position: relative;
+  isolation: isolate;
+  background-image: linear-gradient(90deg, color-mix(in srgb, var(--sector-primary, #0b1f3a) 94%, transparent), color-mix(in srgb, var(--sector-primary, #0b1f3a) 58%, transparent)), var(--sector-hero-image);
+  background-size: cover;
+  background-position: center;
+}
+
+.sector-action-panel {
+  margin: 0 auto 2rem;
+  padding: 1.25rem;
+  border: 1px solid color-mix(in srgb, var(--sector-accent, #1677ff) 34%, #d8e1ea);
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 12px 30px rgba(8, 26, 47, 0.08);
+}
+
+.sector-availability {
+  display: inline-flex;
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
+  color: #0b3657;
+  background: #eef4f8;
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.sector-action-panel p {
+  max-width: 58ch;
+  margin: 0.9rem auto 0;
+}
+
+.sector-action-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+}
+
+.cta-disabled {
+  cursor: not-allowed;
+  opacity: 0.62;
+  filter: grayscale(0.25);
+}
+
+.provider-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 255px;
+  border-top: 4px solid var(--sector-accent, #1677ff);
+}
+
+.provider-logo-frame {
+  width: 100%;
+  height: 92px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+  background: #f7fafc;
+}
+
+.provider-logo {
+  width: min(150px, 82%);
+  height: 72px;
+  object-fit: contain;
+}
+
+.provider-logo-fallback {
+  display: grid;
+  place-items: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  color: #fff;
+  background: #0b3657;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+
+.provider-logo-fallback[hidden] {
+  display: none;
+}
+
+.provider-card h3 {
+  flex: 1;
+}
+
+.provider-asset-note {
+  margin: 0.4rem 0;
+  color: #6b7280;
+  font-size: 0.78rem;
+}
+
+.provider-cta {
+  display: inline-flex;
+  margin-top: 1rem;
+  color: var(--sector-primary, #0b1f3a);
+  font-weight: 750;
+  font-size: 0.88rem;
+}
+
+.provider-cta.is-disabled {
+  color: #667585;
+}
+
+.sector-directory-error {
+  grid-column: 1 / -1;
+  padding: 1rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  background: #fff;
+}
+
+@media (max-width: 640px) {
+  .sector-card-image {
+    height: 118px;
+  }
+
+  .sector-action-row {
+    flex-direction: column;
+  }
+
+  .sector-action-row > * {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+}
+
 .sector-card.active {
   border-color: #1e78b5;
   background: #f0f7fb;
@@ -518,12 +709,12 @@ section {
   padding: 0.4rem 0.8rem;
   border-radius: 4px;
   background: #e8f0ff;
-  color: #1e78b5;
+  color: #155c8a;
 }
 
 .sector-status.coming-soon {
   background: #f0f0f0;
-  color: #999;
+  color: #4b5563;
 }
 
 /* Steps */
